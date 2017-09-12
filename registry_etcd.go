@@ -9,6 +9,7 @@ import (
 	"golang.org/x/net/context"
 )
 
+//EtcdRegistry registers to etcd
 type EtcdRegistry struct {
 	endpoints []string
 	key       string
@@ -19,6 +20,7 @@ type EtcdRegistry struct {
 	err       error
 }
 
+//Option is the configuration of EtcdRegistry
 type Option struct {
 	Endpoints   []string //etcd urls
 	RegistryDir string

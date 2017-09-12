@@ -14,7 +14,7 @@ import (
 const (
 	registryDir = "/elasticell"
 	serviceName = "query"
-	etcdUrl     = "http://127.0.0.1:2379"
+	etcdURL     = "http://127.0.0.1:2379"
 )
 
 var backends = make(map[string]int)
@@ -24,7 +24,7 @@ func TestWatcher(t *testing.T) {
 	var isEqual bool
 	var err error
 	var w *EtcdWatcher
-	if w, err = NewEtcdWatcher(registryDir, serviceName, []string{etcdUrl}); err != nil {
+	if w, err = NewEtcdWatcher(registryDir, serviceName, []string{etcdURL}); err != nil {
 		t.Fatalf("%+v", err)
 	}
 	go watchLoop(t, w)
@@ -58,7 +58,7 @@ func TestWatcher(t *testing.T) {
 func newRegistry(t *testing.T, seq int) (reg *EtcdRegistry) {
 	var err error
 	opt := Option{
-		Endpoints:   []string{etcdUrl},
+		Endpoints:   []string{etcdURL},
 		RegistryDir: registryDir,
 		ServiceName: serviceName,
 		NodeID:      getKeyF(seq),

@@ -16,7 +16,6 @@ type EtcdWatcher struct {
 	endpoints []string
 	cli       *clientv3.Client
 	watcher   clientv3.Watcher
-	updates   []*naming.Update
 	revision  int64
 	ctx       context.Context
 	cancel    context.CancelFunc
