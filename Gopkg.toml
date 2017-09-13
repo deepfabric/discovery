@@ -23,7 +23,7 @@
 
 [[constraint]]
   name = "github.com/coreos/etcd"
-  version = "release-3.2"
+  version = "v3.2.7"
 
 [[constraint]]
   branch = "master"
